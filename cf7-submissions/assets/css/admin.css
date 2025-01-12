@@ -1,0 +1,93 @@
+#cf7-submissions-modal {
+    position: fixed;
+    background: #c8c8c859;
+    top: 0;
+    border: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cf7-submissions-modal-loader {
+    position: absolute;
+}
+#wpcf7-contact-form-list-table .fixed .column-title {
+    width: auto;
+}
+body:not(.mobile) #cf7s-single-wrap {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+}
+.cf7s-wrap .handle-actions{
+    padding: 8px 12px;
+}
+#cf7s-actions-wrap .handle-actions,
+#cf7s-contact-wrap .handle-contact {
+    padding: 12px;
+    background: #f6f7f7;
+    border-top: 1px solid #c3c4c7;
+}
+.cf7s-wrap .handle-actions p,
+.cf7s-wrap .handle-contact p {
+    margin: inherit;
+    overflow: hidden;
+}
+.cf7s-table {
+    width: 100%;
+}
+.cf7s-table.widefat.striped {
+    border: 0;
+}
+#cf7s-action-buttons .dashicons,
+#cf7s-contact-buttons .dashicons {
+    line-height: 28px;
+}
+.button.cf7s-delete {
+    float: right;
+    background: #da0606;
+    color: #fff;
+    border-color: #da0606;
+}
+.button.cf7s-send {
+    float: right;
+}
+#cf7s-actions-wrap p label {
+    width: 120px;
+    display: inline-block;
+    font-weight: 500;
+}
+.cx-table-row.unseen .column-primary,
+.cx-table-row.unseen .column-user,
+.cx-table-row.unseen .column-form,
+.cx-table-row.unseen .column-container,
+.cx-table-row.unseen .column-fields,
+.cx-table-row.unseen .column-files,
+.cx-table-row.unseen .column-time {
+    font-weight: 600;
+}
+#cf7s-files-wrap .inside,
+#cf7s-fields-wrap .inside {
+    margin-bottom: 0;
+}
+.cf7s-table th {
+    font-weight: 600;
+}
+#cf7s-contact-wrap .inside > p > * {
+    width: 100%;
+}
+#cf7s-contact-wrap .inside > p > label {
+    font-weight: 600;
+}
+#cf7s-contact-wrap .inside > p > small {
+    color: #979797;
+    font-style: italic;
+}
+#cf7s-pagination > p {
+    display: flex;
+    justify-content: space-between;
+}

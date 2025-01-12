@@ -1,0 +1,20 @@
+{
+    "authors": [
+        {
+            "name": "Codexpert",
+            "email": "hi@codexpert.io"
+        }
+    ],
+    "require": {
+        "codexpert/plugin": "dev-master",
+        "pluggable/marketing": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codexpert\\CF7_Submissions\\" : "classes/",
+            "Codexpert\\CF7_Submissions\\App\\" : "app/",
+            "Codexpert\\CF7_Submissions\\API\\" : "api/"
+        },
+        "files": [ "inc/functions.php" ]
+    }
+}
