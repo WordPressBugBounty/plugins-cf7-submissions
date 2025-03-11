@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b
+class ComposerStaticInitf61812547dbf99a99aecb622d143afee
 {
     public static $files = array (
         '3643df700757a247351b378bc7c3ac76' => __DIR__ . '/../..' . '/inc/functions.php',
@@ -35,6 +35,14 @@ class ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b
     );
 
     public static $classMap = array (
+        'Codexpert\\CF7_Submissions\\App\\AJAX' => __DIR__ . '/../..' . '/app/AJAX.php',
+        'Codexpert\\CF7_Submissions\\App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'Codexpert\\CF7_Submissions\\App\\Front' => __DIR__ . '/../..' . '/app/Front.php',
+        'Codexpert\\CF7_Submissions\\App\\Installer' => __DIR__ . '/../..' . '/app/Installer.php',
+        'Codexpert\\CF7_Submissions\\App\\Submission' => __DIR__ . '/../..' . '/app/Submission.php',
+        'Codexpert\\CF7_Submissions\\Database' => __DIR__ . '/../..' . '/classes/Database.php',
+        'Codexpert\\CF7_Submissions\\Filesystem' => __DIR__ . '/../..' . '/classes/Filesystem.php',
+        'Codexpert\\CF7_Submissions\\Helper' => __DIR__ . '/../..' . '/classes/Helper.php',
         'Codexpert\\Plugin\\Base' => __DIR__ . '/..' . '/codexpert/plugin/src/Base.php',
         'Codexpert\\Plugin\\Fields' => __DIR__ . '/..' . '/codexpert/plugin/src/Fields.php',
         'Codexpert\\Plugin\\Metabox' => __DIR__ . '/..' . '/codexpert/plugin/src/Metabox.php',
@@ -52,9 +60,9 @@ class ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInita36d8ecdc1cfc37a294c4cd7d15bb18b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf61812547dbf99a99aecb622d143afee::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf61812547dbf99a99aecb622d143afee::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitf61812547dbf99a99aecb622d143afee::$classMap;
 
         }, null, ClassLoader::class);
     }

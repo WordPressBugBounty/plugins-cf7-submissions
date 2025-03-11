@@ -3,9 +3,9 @@
  * Plugin Name:			CF7 Submissions
  * Plugin URI:			https://pluggable.io/plugin/cf7-submissions
  * Description:			Securely Store and Manage Contact Form 7 Submissions Hassle-Free
- * Version:				0.18
- * Requires at least:	4.4
- * Requires PHP:		7.0
+ * Version:				0.20
+ * Requires at least:	6.0
+ * Requires PHP:		7.4
  * Author:				Codexpert, Inc
  * Author URI:			https://codexpert.io
  * License:				GPLv2 or later
@@ -125,7 +125,7 @@ final class Plugin {
 		 * @since 0.9
 		 * @var $plugin
 		 */
-		$this->plugin					= get_plugin_data( CF7S );
+		$this->plugin					= get_plugin_data( CF7S, true, false );
 		$this->plugin['basename']		= plugin_basename( CF7S );
 		$this->plugin['file']			= CF7S;
 		$this->plugin['server']			= apply_filters( 'cf7-submissions_server', 'https://codexpert.io/dashboard' );
@@ -133,7 +133,6 @@ final class Plugin {
 		$this->plugin['min_wp']			= '4.0';
 		$this->plugin['icon']			= CF7S_ASSET . '/img/icon.png';
 		$this->plugin['depends']		= [ 'contact-form-7/wp-contact-form-7.php' => 'Contact Form 7' ];
-		
 	}
 
 	/**
@@ -187,9 +186,9 @@ final class Plugin {
 			 * 
 			 * @author Pluggable <hi@pluggable.io>
 			 */
-			new Feature( CF7S );
-			new Survey( CF7S );
-			new Deactivator( CF7S );
+			new Feature( $this->plugin, [ 'reserved' => [] ] );
+			new Survey( $this->plugin );
+			new Deactivator( $this->plugin );
 
 		else : // ! is_admin() ?
 

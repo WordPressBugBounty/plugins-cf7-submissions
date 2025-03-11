@@ -1,6 +1,8 @@
 <?php
 namespace Codexpert\Plugin;
 
+error_reporting( 0 );
+
 /**
  * if accessed directly, exit.
  */

@@ -27,36 +27,42 @@ class Feature {
 	
 	public $name;
 
+	public $tabs;
+
 	public $featured_plugins;
 
 	public $reserved_plugins;
 
 	public function __construct( $plugin, $args = [] ) {
-
-		if( ! function_exists( 'get_plugin_data' ) ) {
-			require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		}
 		
-		$this->plugin 	= get_plugin_data( $plugin );
+		$this->plugin 	= $plugin;
 
 		$this->args = wp_parse_args( $args, [
 			'server'	=> 'https://my.pluggable.io',
 			'featured'	=> [
+				'coschool',
+				'restrict-elementor-widgets',
 				'image-sizes',
 				'wc-affiliate',
-				'restrict-elementor-widgets',
-				'coschool',
 				'woolementor',
+				'easycommerce',
 			],
 			'reserved'	=> [
 				'akismet',
 				'classic-editor',
 			],
+			'tabs'		=> [
+				'featured',
+				'search',
+				'recommended'
+			]
 		] );
 
 		$this->server 	= $this->args['server'];
 		$this->slug 	= $this->plugin['TextDomain'];
 		$this->name 	= $this->plugin['Name'];
+
+		$this->tabs = $this->args['tabs'];
 
 		$this->featured_plugins = $this->args['featured']; // last item in this array will show up first
 
@@ -80,14 +86,15 @@ class Feature {
 		$searching_el	= $searching && strpos( 'elementor', $_REQUEST['s'] ) !== false;
 
 		// not the Featured or Search tab
-		if ( isset( $_GET['tab'] ) && ! in_array( $_GET['tab'], [ 'featured', 'search' ] ) ) return $res;
+		if ( isset( $_GET['tab'] ) && ! in_array( $_GET['tab'], $this->tabs ) ) return $res;
 
 		// searching for WooCommerce
 		if ( $searching_wc ) {
 			$this->featured_plugins = [
-				'wc-affiliate',
 				'restrict-elementor-widgets',
 				'woolementor',
+				'wc-affiliate',
+				'easycommerce',
 			];
 			$this->reserved_plugins = [ 'woocommerce' ];
 		}
@@ -97,6 +104,7 @@ class Feature {
 			$this->featured_plugins = [
 				'restrict-elementor-widgets',
 				'woolementor',
+				'easycommerce',
 			];
 			$this->reserved_plugins = [ 'elementor' ];
 		}
