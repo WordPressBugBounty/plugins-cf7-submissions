@@ -96,7 +96,9 @@ abstract class Fields extends Base {
 		if( ! isset( $this->sections ) || count( $this->sections ) <= 0 ) return;
 
 		$tab_position = isset( $config['topnav'] ) && $config['topnav'] == true ? 'top' : 'left';
-		echo "<div class='cx-wrapper cx-shadow cx-tab-{$tab_position} cx-sections-" . count( $this->sections ) . "'>";
+		
+		echo "<div class='cx-wrapper-outer'>
+				<div class='cx-wrapper cx-shadow cx-tab-{$tab_position} cx-sections-" . count( $this->sections ) . "'>";
 
 		$sections = $this->sections;
 
@@ -206,7 +208,11 @@ abstract class Fields extends Base {
 		do_action( 'cx-settings-sidebar', $config );
 
 		echo '</div><!--div class="cx-sidebar-wrapper"-->
-			</div><!--div class="cx-wrapper"-->
+			</div><!--div class="cx-wrapper"-->';
+
+		do_action( 'cx-settings-after_wrapper', $config );
+
+		echo '</div><!--div class="cx-wrapper-outer"-->
 		</div><!--div class="wrap"-->
 		<div id="cx-overlay" style="display: none;">
 			<img src="' . plugins_url( 'assets/img/loading.gif', __FILE__ ) . '" />

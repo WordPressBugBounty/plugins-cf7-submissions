@@ -24,16 +24,24 @@ class Survey {
 	public $plugin_file;
 	
 	public $activated_key;
+
+	public $server;
+
+	public $hash_survey;
 	
 	public function __construct( $plugin, $args = [] ) {
 
-		$this->plugin			= $plugin;
+		$this->plugin	= wp_parse_args( $plugin, [
+			'server'		=> 'https://my.pluggable.io',
+			'hash_survey'	=> 'a7719b8f-a43b-4c1d-aeb3-2823ef174f54'
+		] );
+
 		$this->plugin_file		= $this->plugin['file'];
+		$this->server			= $this->plugin['server'];
+		$this->hash_survey		= $this->plugin['hash_survey'];
 		$this->activated_key	= "pl-survey_{$this->plugin['TextDomain']}-activated";
 
 		$this->args = wp_parse_args( $args, [
-			'server'	=> 'https://my.pluggable.io',
-			'hash'		=> 'a7719b8f-a43b-4c1d-aeb3-2823ef174f54',
 			'text'		=> sprintf( __( 'Thanks for using <strong>%1$s</strong>!<br />Help us understand the plugin\'s usage on different sites for improved user satisfaction. Share your site URL and basic information (no passwords or sensitive data) to assist our continuous improvement efforts. Will you contribute?', 'pluggable' ), $this->plugin['Name'] ),
 			'remind'	=> __( 'Remind me later', 'pluggable' ),
 			'button'	=> __( 'Ok, but don\'t bother me again', 'pluggable' ),
@@ -120,18 +128,20 @@ class Survey {
 	    else { // agreed
 	    	$user = wp_get_current_user();
 	    	
-	    	$url = add_query_arg( [ 
-	    	    'fluentcrm'		=> 1,
-	    	    'route'			=> 'contact',
-	    	    'hash'			=> $this->args['hash'],
-	    	    'first_name'    => $user->first_name,
-	    	    'last_name'     => $user->last_name,
-	    	    'email'     	=> $user->user_email,
-	    	    'plugin'     	=> $this->plugin['TextDomain'],
-	    	    'site_url'     	=> site_url(),
-	    	], wp_unslash( $this->args['server'] ) );
-
-	    	wp_remote_post( $url );
+			if( '' !== $this->hash_survey ) {
+				wp_remote_post(
+					"{$this->server}/?fluentcrm=1&route=contact&hash={$this->hash_survey}",
+					array(
+						'body' => array(
+							'first_name'    => $user->first_name,
+							'last_name'     => $user->last_name,
+							'email'     	=> $user->user_email,
+							'plugin'     	=> $this->plugin['TextDomain'],
+							'site_url'     	=> site_url(),
+						),
+					)
+				);
+			}
 
 	    	update_option( $this->activated_key, date_i18n( 'U' ) + YEAR_IN_SECONDS );
 	    }

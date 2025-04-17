@@ -7,18 +7,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codexpertio/plugin.git",
-                "reference": "70ff2a318bbde3b22b3cc8a1ef6f2f65a20d953b"
+                "reference": "3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codexpertio/plugin/zipball/70ff2a318bbde3b22b3cc8a1ef6f2f65a20d953b",
-                "reference": "70ff2a318bbde3b22b3cc8a1ef6f2f65a20d953b",
+                "url": "https://api.github.com/repos/codexpertio/plugin/zipball/3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3",
+                "reference": "3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2024-06-09T09:21:41+00:00",
+            "time": "2025-04-16T14:23:42+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -58,18 +58,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pluggableio/marketing.git",
-                "reference": "0b1d66bb4ce840789931b4c59772cfae8a377667"
+                "reference": "c18e78804f0c143e66f1df2d075b68a31c846799"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pluggableio/marketing/zipball/0b1d66bb4ce840789931b4c59772cfae8a377667",
-                "reference": "0b1d66bb4ce840789931b4c59772cfae8a377667",
+                "url": "https://api.github.com/repos/pluggableio/marketing/zipball/c18e78804f0c143e66f1df2d075b68a31c846799",
+                "reference": "c18e78804f0c143e66f1df2d075b68a31c846799",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.0"
             },
-            "time": "2025-03-10T05:16:53+00:00",
+            "time": "2025-04-16T14:24:40+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
