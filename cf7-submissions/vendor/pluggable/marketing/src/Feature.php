@@ -53,7 +53,7 @@ class Feature {
 			],
 			'tabs'		=> [
 				'featured',
-				'search',
+				// 'search',
 				'recommended'
 			]
 		] );
