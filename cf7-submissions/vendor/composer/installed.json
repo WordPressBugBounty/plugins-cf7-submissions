@@ -7,18 +7,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/codexpertio/plugin.git",
-                "reference": "3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3"
+                "reference": "c9d2cfd3fd438f39cbe2472a98e189fe251b0c86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/codexpertio/plugin/zipball/3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3",
-                "reference": "3df2b550ffe81e4a46a18f0d5edf4eeb26d8aff3",
+                "url": "https://api.github.com/repos/codexpertio/plugin/zipball/c9d2cfd3fd438f39cbe2472a98e189fe251b0c86",
+                "reference": "c9d2cfd3fd438f39cbe2472a98e189fe251b0c86",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2025-04-16T14:23:42+00:00",
+            "time": "2025-04-29T08:44:48+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",

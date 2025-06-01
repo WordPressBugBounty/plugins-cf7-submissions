@@ -50,7 +50,7 @@ class Setup extends Base {
 
 		$this->action( 'admin_menu', 'add_pseudo_menu' );
 		$this->action( 'admin_init', 'render_content' );
-		$this->action( 'admin_head', 'save_setup' );
+		$this->action( 'wp_loaded', 'save_setup' ); // previously: admin_head
 		$this->action( 'admin_print_styles', 'enqueue_scripts' );
 	}
 
