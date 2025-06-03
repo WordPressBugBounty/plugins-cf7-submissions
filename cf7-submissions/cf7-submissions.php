@@ -3,7 +3,7 @@
  * Plugin Name:			CF7 Submissions
  * Plugin URI:			https://pluggable.io/plugin/cf7-submissions
  * Description:			Securely Store and Manage Contact Form 7 Submissions Hassle-Free
- * Version:				0.25
+ * Version:				0.26
  * Requires at least:	6.0
  * Requires PHP:		7.4
  * Author:				Codexpert, Inc
@@ -190,7 +190,7 @@ final class Plugin {
 			 * 
 			 * @author Pluggable <hi@pluggable.io>
 			 */
-			new Feature( $this->plugin, [ 'reserved' => [] ] );
+			// new Feature( $this->plugin, [ 'reserved' => [] ] );
 			new Survey( $this->plugin );
 			new Deactivator( $this->plugin );
 
