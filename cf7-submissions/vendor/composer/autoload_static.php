@@ -11,7 +11,7 @@ class ComposerStaticInitf61812547dbf99a99aecb622d143afee
     );
 
     public static $prefixLengthsPsr4 = array (
-        'C' => 
+        'C' =>
         array (
             'Codexpert\\CF7_Submissions\\App\\' => 30,
             'Codexpert\\CF7_Submissions\\API\\' => 30,
@@ -20,15 +20,15 @@ class ComposerStaticInitf61812547dbf99a99aecb622d143afee
     );
 
     public static $prefixDirsPsr4 = array (
-        'Codexpert\\CF7_Submissions\\App\\' => 
+        'Codexpert\\CF7_Submissions\\App\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
-        'Codexpert\\CF7_Submissions\\API\\' => 
+        'Codexpert\\CF7_Submissions\\API\\' =>
         array (
             0 => __DIR__ . '/../..' . '/api',
         ),
-        'Codexpert\\CF7_Submissions\\' => 
+        'Codexpert\\CF7_Submissions\\' =>
         array (
             0 => __DIR__ . '/../..' . '/classes',
         ),

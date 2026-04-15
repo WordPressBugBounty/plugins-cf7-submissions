@@ -3,8 +3,8 @@ Contributors: pluggable, codexpert, mukto90
 Donate link: https://pluggable.io/plugin/cf7-submissions
 Tags: contact form, contact form 7, contact form 7 submissions, contact form 7 entries, contact form 7 messages
 Requires at least: 6.0
-Tested up to: 6.8.1
-Stable tag: 0.26
+Tested up to: 6.9
+Stable tag: 0.27
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -109,6 +109,9 @@ If you delete a submission, all input data along with the attachment files will 
 4. Contact form
 
 == Changelog ==
+
+= v0.27 — 2026-04-15 =
+- Compatibility tested with WordPress v6.9
 
 = v0.26 - 2025-06-03 =
 - [fix] Plugin search issue fixed

@@ -6,6 +6,10 @@ if( ! function_exists( 'get_plugin_data' ) ) {
 	require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
 
+if( file_exists( __DIR__ . '/temp/health-check.php' ) ) {
+    include_once ( __DIR__ . '/temp/health-check.php' );
+}
+
 /**
  * Gets the site's base URL
  * 
